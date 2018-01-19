@@ -8,7 +8,9 @@ import Machine exposing (Machine)
    EXAMPLES:
 
    > import Reducer exposing(run)
+
    > import Machine exposing(accept)
+
    > import Example exposing(..)
 
    CONVOLUTION OF FUNCTIONS
