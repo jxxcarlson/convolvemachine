@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "A package for convolving reducers and abstract machines",
-    "repository": "https://github.com:jxxcarlson/convolveMachine.git",
+    "repository": "https://github.com/jxxcarlson/convolvemachine.git",
     "license": "BSD3",
     "source-directories": [
         "src"
