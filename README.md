@@ -14,9 +14,9 @@ Example
 Start up `elm repl` and do imports
 listed below.
 
-> import Reducer exposing(run)
-> import Machine exposing(accept)
-> import Example exposing(..)
+* > import Reducer exposing(run)
+* > import Machine exposing(accept)
+* > import Example exposing(..)
 
 Convolution of reducers
 -----------------------
