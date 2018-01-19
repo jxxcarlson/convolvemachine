@@ -38,6 +38,9 @@ accept machine inputList =
         ( accepted, result )
 
 
+{-| Given two machines, form their convolution.
+-}
+convolve : Machine a b -> Machine b c -> Machine a ( b, c )
 convolve machine1 machine2 =
     let
         initial =
