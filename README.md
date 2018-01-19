@@ -34,8 +34,9 @@ OOOIOI that begin with zero or more
 O's and are followed by one or more
 OI's.  The reducer `m` belongs
 to a finite-state machine with initial
-state Start and with one final state,
-`Ix`.
+state `Start` and with one final state,
+`Ix`.  In the example below, the final
+state is `Ix`, so the sequence is accepted.
 
 ```
 > run m Start [O, O, O, I, O, I]
@@ -61,8 +62,12 @@ Running a machine
 -----------------
 
 Machines m1 and m2 are defined in module Examples,
-and `m3 = m1 * m2` is define there as their convolution.
-
+and `m3 = m1 * m2` is defined there as their convolution.
+The `accept` function takes a machine and and input list
+as arguments and returns a tuple `(result, state)`,
+where `result` is `True` or `False` depending on whether
+the sequence is accepted or not.  The second component,
+`state`, is the final state of the machine.
 ```
 > accept m1 [O, I, O, I]
 (True,Ix) : ( Bool, Example.State )
