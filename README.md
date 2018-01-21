@@ -2,13 +2,27 @@
 # Convolve Machine
 
 
-Convolve Machine (jxxcarlson/convolvemachine) is a package that allows one to compose finite-state
+Convolve Machine (jxxcarlson/convolvemachine) is a package that
+allows one to compose finite-state
 machines as well as machines with an infinite set of states.
+
+The key construction is convolution of reducers,
+a kind of composition.  A reducer is a function
+of type `a -> b -> b`.  Transition functions
+of finite-state machines are of this type.  Convolution
+has this signature:
+
+```
+(a -> b -> b) -> (b -> c -> c) -> (a -> (b,c) -> (b,c))
+```
+
+If `m` and `f` are reducers, then `m*f = convolve m f` is
+also a reducer.
 
 See <a href="http://www.knode.io/#@public/661">On Convolution of Machines</a>
 for background on this subject.
 
-## Running the Examples
+## The Examples
 
 
 Start up `elm repl` and do the imports
@@ -21,11 +35,13 @@ listed below.
 ### Running a reducer
 
 
-A reducer is any function of type
-`a -> b -> b`. One "runs" a reducer
+One "runs" a reducer
 on a start state and a list of inputs.
-Here is an example:
+The reducers `m`and `f` as well as
+`mf = m*f` are defined in `Example.elm`.
 
+
+First example:
 ```
 run m Start [O, O, O, I, O, I]
 ```
@@ -71,7 +87,7 @@ is needed.
 
 ### Convolution of machines
 
-Machines m1 and m2 are defined in module Examples,
+Machines m1 and m2 are defined in module `Example`,
 and `m3 = m1 * m2` is defined there as their convolution.
 The `accept` function takes a machine and and input list
 as arguments and returns a tuple `(result, state)`,
